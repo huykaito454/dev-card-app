@@ -9,7 +9,7 @@ const YourCard = () => {
                     <div className="your-card flex items-center justify-center bg-primary w-36 h-8 text-lg font-bold">
                         Card
                     </div>
-                    <div className="your-template flex items-center justify-center  w-32 h-8 text-lg font-bold cursor-pointer">
+                    <div className="your-template button-active flex items-center justify-center  w-32 h-8 text-lg font-bold cursor-pointer">
                         Template
                     </div>
                 </div>
