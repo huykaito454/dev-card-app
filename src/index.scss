@@ -24,7 +24,7 @@
     height: auto;
   }
   .button-active {
-    @apply active:scale-90 transition-all cursor-pointer;
+    @apply active:scale-90 transition-all cursor-pointer select-none;
   }
 }
 .swiper-pagination {
