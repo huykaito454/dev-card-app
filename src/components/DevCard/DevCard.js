@@ -1,12 +1,13 @@
 import React from 'react';
 
-const DevCard = () => {
+const DevCard = ({ height = 400 }) => {
   return (
     <div
-      className='dev-card h-[400px] bg-cover bg-no-repeat bg-center rounded-xl py-6 px-3 flex flex-col justify-between overflow-hidden'
+      className='dev-card bg-cover bg-no-repeat bg-center rounded-xl py-6 px-3 flex flex-col justify-between overflow-hidden'
       style={{
         backgroundImage:
           'url(https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80)',
+        height: `${height}px`,
       }}>
       <div className='name text-2xl font-bold text-ellipsis overflow-hidden'>
         @nthuy
