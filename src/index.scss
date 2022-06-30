@@ -23,6 +23,9 @@
     width: 280px;
     height: auto;
   }
+  .button-active {
+    @apply active:scale-90 transition-all cursor-pointer;
+  }
 }
 .swiper-pagination {
   position: relative;
