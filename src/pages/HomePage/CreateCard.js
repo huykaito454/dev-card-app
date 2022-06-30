@@ -11,7 +11,7 @@ const CreateCard = () => {
         <span className="text-primary">own</span>
       </h1>
       <div className="button-active">
-        <i className="fas fa-plus bg-primary py-2 px-[10px]  rounded-full"></i>
+        <i className="fas fa-plus bg-primary py-2 px-[10px] rounded-full"></i>
       </div>
     </div>
   );

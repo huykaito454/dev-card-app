@@ -37,7 +37,7 @@
   z-index: 100;
 }
 
-.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
@@ -54,9 +54,47 @@
 
 .add,
 .your-template {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%)
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+}
+.your-template2 {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%);
 }
 
 .your-card {
-  clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%)
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+}
+.your-card2 {
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+}
+
+.list-item {
+  @apply your-card flex items-center justify-center bg-primary py-1 pl-4 pr-10 text-lg font-bold select-none;
+}
+.list-item2 {
+  @apply your-card2 flex items-center justify-center bg-primary py-1 pl-4 pr-10 text-lg font-bold select-none;
+}
+.list-item3 {
+  @apply your-template2 flex items-center justify-center bg-primary py-1 pl-10 pr-4 text-lg font-bold select-none;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white;
 }
