@@ -3,8 +3,11 @@ import CardTemplate from '../../components/CardGenerateTool/CardTemplate';
 
 const CardGenerate = () => {
   return (
-    <div className='mt-8 mb-8 p-2 flex flex-row'>
+    <div className='page-container flex flex-row'>
       <CardTemplate></CardTemplate>
+      <div className='custom-generate bg-purple-600 w-[50%] h-[100%] flex flex-row justify-between'>
+        asdasdas
+      </div>
     </div>
   );
 };
