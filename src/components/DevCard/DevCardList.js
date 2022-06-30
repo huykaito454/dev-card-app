@@ -6,7 +6,7 @@ import { Pagination } from "swiper";
 import DevCard from "./DevCard";
 const DevCardList = () => {
   return (
-    <div className="cursor-pointer dev-list select-none">
+    <div className="cursor-pointer dev-list select-none mb-10">
       <Swiper
         grabCursor={"true"}
         spaceBetween={40}
