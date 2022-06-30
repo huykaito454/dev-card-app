@@ -4,13 +4,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
+
+import YourCard from "./components/UserSection/YourCard";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <YourCard />
     </BrowserRouter>
   </React.StrictMode>
 );

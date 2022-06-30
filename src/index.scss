@@ -1,17 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   body {
     @apply font-body bg-black text-white;
   }
 }
+
 @layer components {
   .page-container {
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
   }
+
   .text-no-wrap-1 {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -19,24 +22,38 @@
     -webkit-box-orient: vertical;
     display: -webkit-box;
   }
+
   .dev-list .swiper-slide {
     width: 280px;
     height: auto;
   }
 }
+
 .swiper-pagination {
   position: relative;
   z-index: 100;
 }
-.swiper-horizontal > .swiper-pagination-bullets,
+
+.swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
   bottom: 0px;
 }
+
 .swiper-pagination-bullet {
   @apply bg-white;
 }
+
 .swiper-pagination-bullet-active {
   @apply bg-primary;
+}
+
+.add,
+.your-template {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%)
+}
+
+.your-card {
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%)
 }
