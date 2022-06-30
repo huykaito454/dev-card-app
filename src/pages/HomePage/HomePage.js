@@ -1,5 +1,5 @@
 import React from "react";
-import DevCardList from "../components/DevCard/DevCardList";
+import DevCardList from "../../components/DevCard/DevCardList";
 
 const HomePage = () => {
   return (
