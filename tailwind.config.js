@@ -9,6 +9,9 @@ module.exports = {
         primary: "#FF66C4",
         header: "#2C2C2C",
       },
+      backgroundImage: {
+        'register': "url('./assets/image/background_wave.svg')",
+      }
     },
   },
   plugins: [],
