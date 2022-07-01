@@ -8,9 +8,15 @@ const CardGenerate = lazy(() => import("./pages/CardGenerate/CardGenerate"));
 const ForgotPassword = lazy(() =>
   import("./pages/ForgotPassword/ForgotPassword")
 );
+const ResetPassword = lazy(() =>
+  import("./pages/ForgotPassword/ResetPassword")
+);
 const SignUp = lazy(() => import("./components/Authentication/SignUp"));
 const SignIn = lazy(() => import("./components/Authentication/SignIn"));
 const ConfirmOTP = lazy(() => import("./pages/ForgotPassword/ConfirmOTP"));
+const ConfirmSuccess = lazy(() =>
+  import("./pages/ForgotPassword/ConfirmSuccess")
+);
 
 export default function AppRouter() {
   return (
@@ -32,6 +38,14 @@ export default function AppRouter() {
         ></Route>
         <Route path="/sign-up" element={<SignUp></SignUp>}></Route>
         <Route path="/sign-in" element={<SignIn></SignIn>}></Route>
+        <Route
+          path="/confirmed-success"
+          element={<ConfirmSuccess></ConfirmSuccess>}
+        ></Route>
+        <Route
+          path="/reset-password"
+          element={<ResetPassword></ResetPassword>}
+        ></Route>
       </Route>
     </Routes>
   );
