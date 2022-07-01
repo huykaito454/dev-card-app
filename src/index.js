@@ -6,6 +6,7 @@ import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
 
 import YourCard from "./components/UserSection/YourCard";
+import SignUp from "./components/SignUp/SignUp";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
