@@ -5,7 +5,6 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
 
-import YourCard from "./components/UserSection/YourCard";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
