@@ -1,7 +1,7 @@
-import React, { Suspense } from "react";
-import "swiper/scss";
-import "swiper/css/pagination";
-import AppRouter from "./AppRouter";
+import React, { Suspense } from 'react';
+import 'swiper/scss';
+import 'swiper/css/pagination';
+import AppRouter from './AppRouter';
 function App() {
   return (
     <>
