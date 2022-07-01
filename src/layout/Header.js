@@ -15,7 +15,7 @@ const Header = () => {
           }}
         />
       </div>
-      <div className="title text-3xl font-bold lg:w-[50%] lg:text-center w-[65%] hidden sm:block ">
+      <div className="title text-3xl font-bold lg:w-[50%] lg:text-center w-[65%] hidden sm:block">
         Dev Card Generator
       </div>
       <div className="button-group flex gap-x-2 w-[25%] justify-end">
