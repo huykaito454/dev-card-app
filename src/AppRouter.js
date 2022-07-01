@@ -12,7 +12,7 @@ export default function AppRouter() {
       <Route path="/" element={<Main></Main>}>
         <Route path="/" element={<HomePage></HomePage>}></Route>
         <Route
-          path="/cardGenerate"
+          path="/card-generate"
           element={<CardGenerate></CardGenerate>}
         ></Route>
         <Route path="/profile" element={<ProfilePage></ProfilePage>}></Route>
