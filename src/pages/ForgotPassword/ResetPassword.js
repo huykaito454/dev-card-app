@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ResetPassword = () => {
+  const navigate = useNavigate();
   return (
     <div className='bg-register h-screen bg-cover bg-no-repeat flex items-center justify-center'>
       <div className='form-sign-up flex flex-col items-center justify-center bg-[#2B2B2B] rounded-xl w-[40%]'>

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ForgotPassword = () => {
+  const navigate = useNavigate();
   return (
     <div className='bg-register h-screen bg-cover bg-no-repeat flex items-center justify-center'>
       <div className='form-sign-up flex flex-col items-center justify-center bg-[#2B2B2B] rounded-xl w-[40%]'>
@@ -21,7 +23,9 @@ const ForgotPassword = () => {
             />
           </div>
         </div>
-        <div className='btn-sign-up bg-primary text-sm font-normal rounded-3xl px-6 py-2 flex justify-center items-center mt-8 mb-8 cursor-pointer button-active'>
+        <div
+          className='btn-sign-up bg-primary text-sm font-normal rounded-3xl px-6 py-2 flex justify-center items-center mt-8 mb-8 cursor-pointer button-active'
+          onClick={() => navigate('confirmOTP')}>
           Continue
         </div>
       </div>
