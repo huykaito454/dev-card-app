@@ -5,8 +5,7 @@ const ResetPassword = () => {
     <div className='bg-register h-screen bg-cover bg-no-repeat flex items-center justify-center'>
       <div className='form-sign-up flex flex-col items-center justify-center bg-[#2B2B2B] rounded-xl w-[40%]'>
         <div className='title text-3xl font-bold mt-8 mb-5'>
-          Creating
-          <span className='text-primary'> Account</span>
+          <span className='text-primary'> Reset</span> password
         </div>
         <div className='form flex flex-col w-[50%] gap-5 text-black text-xs '>
           <div className='relative'>
