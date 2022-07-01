@@ -115,3 +115,32 @@
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background-color: #ff66c4 !important;
 }
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="range"] {
+    overflow: hidden;
+
+    -webkit-appearance: none;
+    background-color: white;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 8px;
+    -webkit-appearance: none;
+    color: #13bba4;
+    margin-top: -1px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 15px;
+    cursor: pointer;
+    background: #ff66c4;
+    box-shadow: -19000px 0 0 19000px #ff66c4;
+  }
+}
+@media screen and (max-height: 600px) {
+  .card-generate {
+    @apply bg-[#6d1a6a];
+  }
+}
