@@ -3,8 +3,8 @@ import DevCardList from "../DevCard/DevCardList";
 
 const YourCard = () => {
   return (
-    <div>
-      <div className="head-card flex justify-between mb-12">
+    <div className="flex flex-col page-container">
+      <div className="head-card flex justify-between mb-12 ">
         <div className="your-option flex border-2 border-pink-500 cursor-pointer">
           <div className="your-card button-active flex items-center justify-center bg-primary w-36 h-8 text-lg font-bold">
             Card
