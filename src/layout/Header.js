@@ -19,10 +19,20 @@ const Header = () => {
         Dev Card Generator
       </div>
       <div className="button-group flex gap-x-2 w-[25%] justify-end">
-        <div className="button bg-primary px-4 py-1 rounded-2xl font-medium button-active">
+        <div
+          className="button bg-primary px-4 py-1 rounded-2xl font-medium button-active"
+          onClick={() => {
+            navigate("sign-in");
+          }}
+        >
           Login
         </div>
-        <div className="button bg-white text-black px-4 py-1 rounded-2xl font-medium mr-3 button-active">
+        <div
+          className="button bg-white text-black px-4 py-1 rounded-2xl font-medium mr-3 button-active"
+          onClick={() => {
+            navigate("sign-up");
+          }}
+        >
           SignUp
         </div>
       </div>
