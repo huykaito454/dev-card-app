@@ -9,13 +9,28 @@ const DevCardList = () => {
     <div className="cursor-pointer dev-list select-none mb-10 w-full">
       <Swiper
         grabCursor={"true"}
-        spaceBetween={40}
+        spaceBetween={100}
         slidesPerView={"auto"}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
       >
+        <SwiperSlide>
+          <DevCard></DevCard>
+        </SwiperSlide>
+        <SwiperSlide>
+          <DevCard></DevCard>
+        </SwiperSlide>
+        <SwiperSlide>
+          <DevCard></DevCard>
+        </SwiperSlide>
+        <SwiperSlide>
+          <DevCard></DevCard>
+        </SwiperSlide>
+        <SwiperSlide>
+          <DevCard></DevCard>
+        </SwiperSlide>
         <SwiperSlide>
           <DevCard></DevCard>
         </SwiperSlide>
