@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Input from "./Input";
+import * as yup from "yup";
 const SignUpPage = () => {
   const { control } = useForm();
   return (
