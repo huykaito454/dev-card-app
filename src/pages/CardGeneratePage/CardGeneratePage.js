@@ -5,9 +5,11 @@ import FormGenerate from "./FormGenerate";
 
 const CardGeneratePage = () => {
   return (
-    <div className="card-generate flex items-start justify-center page-container">
-      <CardTemplate></CardTemplate>
-      <FormGenerate></FormGenerate>
+    <div className="w-full bg-gradients">
+      <div className="card-generate flex items-start justify-center page-container">
+        <CardTemplate></CardTemplate>
+        <FormGenerate></FormGenerate>
+      </div>
     </div>
   );
 };
