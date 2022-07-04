@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -22,12 +21,6 @@ const schema = yup
       .required("Please enter your password"),
   })
   .required();
-=======
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import Input from './Input';
-import * as yup from 'yup';
->>>>>>> 8150dbe277677c56c67556823a8f85b6bc09e58c
 const SignUpPage = () => {
   const {
     control,
@@ -59,39 +52,25 @@ const SignUpPage = () => {
   };
 
   return (
-<<<<<<< HEAD
     <div className="bg-register h-screen bg-cover bg-no-repeat flex items-center justify-center">
       <form
         className="form-sign-up w-[600px] flex flex-col items-center justify-center bg-[#2B2B2B] rounded-xl md:px-20 px-10 py-5"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="title text-3xl font-bold mt-8 mb-5">
-=======
-    <div className='bg-register h-screen bg-cover bg-no-repeat flex items-center justify-center'>
-      <div className='form-sign-up flex flex-col items-center justify-center bg-[#2B2B2B] rounded-xl md:px-48 px-20 py-5'>
-        <div className='title text-3xl font-bold mt-8 mb-5'>
->>>>>>> 8150dbe277677c56c67556823a8f85b6bc09e58c
           Creating
-          <span className='text-primary'> Account</span>
+          <span className="text-primary"> Account</span>
         </div>
-<<<<<<< HEAD
         <div className="social text-primary mb-6 text-3xl flex justify-between w-[35%]">
           <i className="fab fa-google cursor-pointer"></i>
           <i className="fab fa-facebook cursor-pointer"></i>
           <i className="fab fa-github cursor-pointer"></i>
-=======
-        <div className='social text-primary mb-6 text-3xl flex justify-between w-[50%]'>
-          <i className='fab fa-google cursor-pointer'></i>
-          <i className='fab fa-facebook cursor-pointer'></i>
-          <i className='fab fa-github cursor-pointer'></i>
->>>>>>> 8150dbe277677c56c67556823a8f85b6bc09e58c
         </div>
-        <div className='tips text-[#ADADAD] text-xs font-bold mb-4'>
+        <div className="tips text-[#ADADAD] text-xs font-bold mb-4">
           Or using your email for registration
         </div>
-        <div className='form flex flex-col w-[100%] gap-5 text-black text-xs '>
+        <div className="form flex flex-col w-[100%] gap-5 text-black text-xs ">
           <Input
-<<<<<<< HEAD
             placeholder="Email"
             icon={"fas fa-envelope"}
             name="email"
@@ -123,24 +102,6 @@ const SignUpPage = () => {
           className="btn-sign-up bg-primary text-sm font-normal rounded-3xl px-6 py-2 flex justify-center items-center mt-8 mb-8 cursor-pointer"
           disabled={isSubmitting}
         >
-=======
-            placeholder='Email'
-            icon={'fas fa-envelope'}
-            name='email'
-            control={control}></Input>
-          <Input
-            placeholder='Password'
-            icon={'fas fa-key'}
-            name='password'
-            control={control}></Input>
-          <Input
-            placeholder='Confirm Password'
-            icon={'fas fa-key'}
-            name='confirmPassword'
-            control={control}></Input>
-        </div>
-        <div className='btn-sign-up bg-primary text-sm font-normal rounded-3xl px-6 py-2 flex justify-center items-center mt-8 mb-8 cursor-pointer button-active'>
->>>>>>> 8150dbe277677c56c67556823a8f85b6bc09e58c
           SIGN UP
         </button>
       </form>
