@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Main from "./layout/Main";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
@@ -21,22 +21,44 @@ const ConfirmSuccess = lazy(() =>
 );
 
 export default function AppRouter() {
+  const token = localStorage.getItem("userToken");
   return (
     <Routes>
       <Route path="/" element={<Main></Main>}>
         <Route path="/" element={<HomePage></HomePage>}></Route>
         <Route
           path="/card-generate"
-          element={<CardGenerate></CardGenerate>}
+          element={
+            token !== null ? (
+              <CardGenerate></CardGenerate>
+            ) : (
+              <Navigate to="/sign-in" />
+            )
+          }
         ></Route>
-        <Route path="/profile" element={<ProfilePage></ProfilePage>}></Route>
+        <Route
+          path="/profile"
+          element={
+            token !== null ? (
+              <ProfilePage></ProfilePage>
+            ) : (
+              <Navigate to="/sign-in" />
+            )
+          }
+        ></Route>
         <Route
           path="/forgot-password"
           element={<ForgotPassword></ForgotPassword>}
         ></Route>
-        <Route path="/confirmOTP" element={<ConfirmOTP></ConfirmOTP>}></Route>
-        <Route path="/sign-up" element={<SignUp></SignUp>}></Route>
-        <Route path="/sign-in" element={<SignIn></SignIn>}></Route>
+        <Route path="/confirm-otp" element={<ConfirmOTP></ConfirmOTP>}></Route>
+        <Route
+          path="/sign-up"
+          element={token === null ? <SignUp></SignUp> : <Navigate to="/" />}
+        ></Route>
+        <Route
+          path="/sign-in"
+          element={token === null ? <SignIn></SignIn> : <Navigate to="/" />}
+        ></Route>
         <Route
           path="/confirmed-success"
           element={<ConfirmSuccess></ConfirmSuccess>}

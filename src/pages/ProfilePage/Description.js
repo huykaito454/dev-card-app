@@ -1,23 +1,13 @@
 import React from "react";
 
-const DescriptionPage = () => {
+const DescriptionPage = ({ item }) => {
   return (
     <div className="flex flex-col-reverse lg:flex-row items-start justify-between w-full">
       <div className="lg:w-[65%] w-full flex items-start justify-between pr-4">
         <textarea
           className="text-justify w-[98%] bg-black outline-none resize-none pr-4 overflow-hidden"
           rows={11}
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-          adipisci laudantium unde consequuntur minus quam quisquam reiciendis
-          architecto. Necessitatibus saepe quos eum placeat veritatis? Itaque
-          fuga molestias ullam similique sed. unde consequuntur minus quam
-          quisquam reiciendis architecto. Necessitatibus saepe quos eum placeat
-          veritatis? Itaque fuga molestias ullam similique sed. Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Sint delectus earum
-          maiores recusandae obcaecati quaerat iure iusto praesentium in.
-          Cupidit
-        </textarea>
+        ></textarea>
         <i className="fas fa-pencil-alt text-2xl w-[3%] cursor-pointer"></i>
       </div>
       <div className="flex lg:items-start items-center lg:mb-0 mb-10 justify-between lg:pl-4 lg:w-[35%] w-full lg:border-l-2 ">
