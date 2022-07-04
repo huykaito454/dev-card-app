@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { useForm } from "react-hook-form";
 import Input from "./Input";
@@ -21,6 +22,12 @@ const schema = yup
       .required("Please enter your password"),
   })
   .required();
+=======
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import Input from './Input';
+import { useNavigate } from 'react-router-dom';
+>>>>>>> 8150dbe277677c56c67556823a8f85b6bc09e58c
 const SignInPage = () => {
   const navigate = useNavigate();
   const {
@@ -50,25 +57,41 @@ const SignInPage = () => {
     }
   };
   return (
+<<<<<<< HEAD
     <div className="bg-register h-screen bg-cover bg-no-repeat flex items-center justify-center">
       <form
         className="form-sign-up w-[600px] flex flex-col items-center justify-center bg-[#2B2B2B] rounded-xl md:px-20 px-10 py-5"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="title text-3xl font-bold mt-8 mb-5">
+=======
+    <div className='bg-register h-screen bg-cover bg-no-repeat flex items-center justify-center'>
+      <div className='form-sign-up flex flex-col items-center justify-center bg-[#2B2B2B] rounded-xl md:px-48 px-20 py-5'>
+        <div className='title text-3xl font-bold mt-8 mb-5'>
+>>>>>>> 8150dbe277677c56c67556823a8f85b6bc09e58c
           Sign in to
-          <span className="text-primary"> DevC</span>
+          <span className='text-primary'> DevC</span>
         </div>
+<<<<<<< HEAD
         <div className="social text-primary mb-6 text-3xl flex justify-between w-[35%]">
           <i className="fab fa-google cursor-pointer"></i>
           <i className="fab fa-facebook cursor-pointer"></i>
           <i className="fab fa-github cursor-pointer"></i>
         </div>
         <div className="tips text-[#ADADAD] text-xs font-bold mb-4"  >
+=======
+        <div className='social text-primary mb-6 text-3xl flex justify-between w-[50%]'>
+          <i className='fab fa-google cursor-pointer'></i>
+          <i className='fab fa-facebook cursor-pointer'></i>
+          <i className='fab fa-github cursor-pointer'></i>
+        </div>
+        <div className='tips text-[#ADADAD] text-xs font-bold mb-4'>
+>>>>>>> 8150dbe277677c56c67556823a8f85b6bc09e58c
           Or using your email
         </div>
-        <div className="form flex flex-col w-[100%] gap-5 text-black text-xs ">
+        <div className='form flex flex-col w-[100%] gap-5 text-black text-xs '>
           <Input
+<<<<<<< HEAD
             placeholder="Email"
             icon={"fas fa-envelope"}
             name="email"
@@ -88,15 +111,26 @@ const SignInPage = () => {
           {errors.password && (
             <p className="text-xs text-red-500">{errors.password.message}</p>
           )}
+=======
+            placeholder='Email'
+            icon={'fas fa-envelope'}
+            name='email'
+            control={control}></Input>
+          <Input
+            placeholder='Password'
+            icon={'fas fa-key'}
+            name='password'
+            control={control}></Input>
+>>>>>>> 8150dbe277677c56c67556823a8f85b6bc09e58c
         </div>
         <div
-          className="tips text-[#ADADAD] text-xs font-bold mt-4 underline cursor-pointer"
+          className='tips text-[#ADADAD] text-xs font-bold mt-4 underline cursor-pointer'
           onClick={() => {
-            navigate("/forgot-password");
-          }}
-        >
+            navigate('/forgot-password');
+          }}>
           Forgot your password?
         </div>
+<<<<<<< HEAD
         <button
           className="btn-sign-up bg-primary text-sm font-normal rounded-3xl px-6 py-2 flex justify-center items-center mt-4 mb-8 cursor-pointer"
           disabled={isSubmitting}
@@ -104,6 +138,12 @@ const SignInPage = () => {
           LOGIN
         </button>
       </form>
+=======
+        <div className='btn-sign-up bg-primary text-sm font-normal rounded-3xl px-6 py-2 flex justify-center items-center mt-4 mb-8 cursor-pointer button-active'>
+          SIGN IN
+        </div>
+      </div>
+>>>>>>> 8150dbe277677c56c67556823a8f85b6bc09e58c
     </div>
   );
 };
