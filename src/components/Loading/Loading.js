@@ -2,7 +2,7 @@ import React from "react";
 
 const Loading = () => {
   return (
-    <div className="flex items-center justify-center h-[90vh] w-[100vw] bg-black bg-opacity-50 z-[999] fixed">
+    <div className="flex items-center justify-center bg-black bg-opacity-50 z-[9999] fixed top-0 left-0 right-0 bottom-0">
       <div className="lds-ring">
         <div></div>
         <div></div>
