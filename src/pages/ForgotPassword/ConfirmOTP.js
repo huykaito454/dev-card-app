@@ -1,15 +1,22 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 const ConfirmOTP = () => {
-  const { register } = useForm();
+  const { register, handleSubmit } = useForm();
+  const email = sessionStorage.getItem("email");
   const clickEvent = (first, last) => {
     if (first.value) {
       document.getElementById(last).focus();
     }
   };
+  const onSubmit = (values) => {
+    console.log(email);
+  };
   return (
     <div className="bg-register h-screen bg-cover bg-no-repeat flex items-center justify-center">
-      <form className="form-sign-up flex flex-col items-center justify-center bg-[#2B2B2B] rounded-xl md:px-20 px-10 py-5 w-[600px]">
+      <form
+        className="form-sign-up flex flex-col items-center justify-center bg-[#2B2B2B] rounded-xl md:px-20 px-10 py-5 w-[600px]"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div className="title text-3xl font-bold mt-8 mb-5">
           <span className="text-primary">OTP </span>
           Verification
@@ -57,9 +64,9 @@ const ConfirmOTP = () => {
             />
           </div>
         </div>
-        <div className="btn-sign-up bg-primary text-sm font-normal rounded-3xl px-6 py-2 flex justify-center items-center mt-4 cursor-pointer button-active">
+        <button className="btn-sign-up bg-primary text-sm font-normal rounded-3xl px-6 py-2 flex justify-center items-center mt-4 cursor-pointer button-active">
           Continue
-        </div>
+        </button>
         <div className="tips text-[#ADADAD] text-xs font-bold mt-4 underline mb-4">
           Resend 40s
         </div>

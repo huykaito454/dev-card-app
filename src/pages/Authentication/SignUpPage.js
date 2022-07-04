@@ -33,7 +33,8 @@ const SignUpPage = () => {
       const res = await axios.post(API.getAPI("register"), data);
       console.log(res);
       alert(res.data.message);
-      navigate("/sign-in");
+      sessionStorage.setItem("email", data.email);
+      navigate("/confirm-otp");
     } catch (error) {
       alert(error.response.data.message);
       console.log(error);
@@ -41,7 +42,6 @@ const SignUpPage = () => {
   };
   const onSubmit = (values, e) => {
     e.preventDefault();
-
     console.log(values);
     if (values.password === values.confirmPassword) {
       console.log(values);
