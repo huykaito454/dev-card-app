@@ -4,15 +4,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import DevCard from "./DevCard";
-import { getDataNoJWT } from "../../actions/httpHandle";
+import { getData, getDataNoJWT } from "../../actions/httpHandle";
 import { Buffer } from "buffer";
+import Loading from "../Loading/Loading";
 const DevCardList = () => {
   const [card, setCard] = useState([]);
+  const [loading, setLoading] = useState(false);
   const handleGetData = async () => {
+    setLoading(true);
     const data = await getDataNoJWT("get-all-cards");
-    const newData = handleBase64(data.data.data);
-    console.log(newData);
-    setCard(newData);
+    // const data = await getData("get-cards-user");
+    if (data.data.data) {
+      const newData = handleBase64(data.data.data);
+      setLoading(false);
+      setCard(newData);
+    } else {
+      setLoading(false);
+      return;
+    }
   };
   const handleBase64 = (data) => {
     for (var k in data) {
@@ -25,6 +34,7 @@ const DevCardList = () => {
   }, []);
   return (
     <div className="cursor-pointer dev-list select-none mb-10 w-full">
+      {loading && <Loading></Loading>}
       <Swiper
         grabCursor={"true"}
         spaceBetween={100}

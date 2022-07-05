@@ -20,7 +20,7 @@ const DevCard = ({ height = 400, item }) => {
         <div className="skills flex flex-col gap-y-1 mb-3">
           {item?.CardSkills.length > 0 &&
             item.CardSkills?.map((item) => (
-              <div className="skill-item ">
+              <div key={item.id} className="skill-item ">
                 <div className="skill-item-name text-xs mb-1">{item.name}</div>
                 <div className="w-[55%] bg-gray-500 h-1 rounded-lg">
                   <div
