@@ -41,18 +41,3 @@ export const handleResendOTP = async (type, data) => {
     console.log(error);
   }
 };
-
-export const createCard = async (type, data, file) => {
-  try {
-    const res = await axios.post(API.getAPI(type), file, {
-      params: { data: data, file: file },
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("token"),
-      },
-    });
-    return res;
-  } catch (error) {
-    console.log(error);
-  }
-};

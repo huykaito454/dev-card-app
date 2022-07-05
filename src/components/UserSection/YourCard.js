@@ -21,7 +21,6 @@ const YourCard = () => {
       const newData = handleBase64(data.data.data);
       setLoading(false);
       setCard(newData);
-      console.log(data);
     } else {
       setLoading(false);
       return;
@@ -69,15 +68,17 @@ const YourCard = () => {
               }}
               modules={[Pagination]}
             >
-              {card.length > 0 &&
+              {card.length > 0 ? (
                 card.map((item) => (
                   <SwiperSlide key={item.id}>
                     <DevCard item={item}></DevCard>
                   </SwiperSlide>
-                ))}
-              <span className="flex items-center justify-center">
-                You have no card
-              </span>
+                ))
+              ) : (
+                <span className="flex items-center justify-center">
+                  You have no card
+                </span>
+              )}
             </Swiper>
           </div>
         </div>

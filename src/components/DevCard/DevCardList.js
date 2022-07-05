@@ -13,7 +13,6 @@ const DevCardList = () => {
   const handleGetData = async () => {
     setLoading(true);
     const data = await getDataNoJWT("get-all-cards");
-    // const data = await getData("get-cards-user");
     if (data.data.data) {
       const newData = handleBase64(data.data.data);
       setLoading(false);

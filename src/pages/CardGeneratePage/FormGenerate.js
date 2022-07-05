@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { getDataNoJWT, postData } from "../../actions/httpHandle";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const FormGenerate = () => {
   const { register, handleSubmit } = useForm();
   const [skillCount, setSkillCount] = useState(3);
   const [jobs, setJobs] = useState([]);
   const handleCreateCard = async (data) => {
     const res = await postData("create-card", data);
-    console.log(res);
-    alert(res.data.message);
+    toast.success(res.data.message, {
+      pauseOnHover: false,
+      delay: 0,
+      position: toast.POSITION.TOP_RIGHT,
+    });
   };
   const onSubmit = (values) => {
     console.log(values);

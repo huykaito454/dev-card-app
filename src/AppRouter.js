@@ -50,7 +50,12 @@ export default function AppRouter() {
           path="/forgot-password"
           element={<ForgotPassword></ForgotPassword>}
         ></Route>
-        <Route path="/confirm-otp" element={<ConfirmOTP></ConfirmOTP>}></Route>
+        <Route
+          path="/confirm-otp"
+          element={
+            token === null ? <ConfirmOTP></ConfirmOTP> : <Navigate to="/" />
+          }
+        ></Route>
         <Route
           path="/sign-up"
           element={token === null ? <SignUp></SignUp> : <Navigate to="/" />}

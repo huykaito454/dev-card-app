@@ -96,7 +96,7 @@ const SignInPage = () => {
           Forgot your password?
         </div>
         <button
-          className="btn-sign-up bg-primary text-sm font-normal rounded-3xl px-6 py-2 flex justify-center items-center mt-4 mb-8 cursor-pointer"
+          className="btn-sign-up bg-primary text-sm font-normal rounded-3xl px-6 py-2 flex justify-center items-center mt-4 mb-8 cursor-pointer button-active"
           disabled={isSubmitting}
         >
           LOGIN

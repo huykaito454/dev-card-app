@@ -4,7 +4,10 @@ import { API } from "../../config";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { handleResendOTP } from "../../actions/httpHandle";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 const ConfirmOTP = () => {
+  const Swal = require("sweetalert2");
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const [count, setCount] = useState(60);
@@ -16,19 +19,26 @@ const ConfirmOTP = () => {
   };
   const onSubmit = (values) => {
     const otp = `${values.first}${values.second}${values.third}${values.fourth}`;
-
     const data = { email: email, otp: otp };
     handleOTP(data);
   };
   const handleOTP = async (data) => {
     try {
       const res = await axios.post(API.getAPI("verify"), data);
-      alert(res.data.message);
+      Swal.fire("Good job!", res.data.message, "success");
+      // toast.success(res.data.message, {  
+      //   pauseOnHover: false,
+      //   delay: 0,
+      //   position: toast.POSITION.TOP_RIGHT,
+      // });
       navigate("/sign-in");
       sessionStorage.removeItem("email");
     } catch (error) {
-      alert(error.response.data.message);
-      console.log(error);
+      toast.error(error.response.data.message, {
+        pauseOnHover: false,
+        delay: 0,
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
   const handleCount = () => {

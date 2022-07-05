@@ -5,6 +5,7 @@ const Main = () => {
   return (
     <>
       <Header></Header>
+
       <Outlet></Outlet>
     </>
   );

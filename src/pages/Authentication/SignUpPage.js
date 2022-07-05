@@ -7,6 +7,7 @@ import { API } from "../../config";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Loading from "../../components/Loading/Loading";
+import { toast } from "react-toastify";
 const schema = yup
   .object({
     email: yup
@@ -38,9 +39,12 @@ const SignUpPage = () => {
       sessionStorage.setItem("email", data.email);
       navigate("/confirm-otp");
     } catch (error) {
-      setLoading(!loading);
-      alert(error.response.data.message);
-      console.log(error);
+      setLoading(false);
+      toast.error(error.response.data.message, {
+        pauseOnHover: false,
+        delay: 0,
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
   const onSubmit = (values, e) => {
@@ -48,7 +52,11 @@ const SignUpPage = () => {
     if (values.password === values.confirmPassword) {
       handleRegisterForm(values);
     } else {
-      alert("Password must not be the same");
+      toast.error("Password must not be the same", {
+        pauseOnHover: false,
+        delay: 0,
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 
@@ -101,7 +109,7 @@ const SignUpPage = () => {
           ></Input>
         </div>
         <button
-          className="btn-sign-up bg-primary text-sm font-normal rounded-3xl px-6 py-2 flex justify-center items-center mt-8 mb-8 cursor-pointer"
+          className="btn-sign-up bg-primary text-sm font-normal rounded-3xl px-6 py-2 flex justify-center items-center mt-8 mb-8 cursor-pointer button-active"
           disabled={isSubmitting}
         >
           SIGN UP
