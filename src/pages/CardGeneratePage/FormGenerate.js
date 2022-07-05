@@ -6,7 +6,9 @@ const FormGenerate = () => {
   const [skillCount, setSkillCount] = useState(3);
   const [jobs, setJobs] = useState([]);
   const handleCreateCard = async (data) => {
-    const res = await postData("", data);
+    const res = await postData("create-card", data);
+    console.log(res);
+    alert(res.data.message);
   };
   const onSubmit = (values) => {
     console.log(values);
@@ -24,6 +26,7 @@ const FormGenerate = () => {
         cardSkills: cardskills,
       };
       console.log(newData);
+      handleCreateCard(newData);
     };
     reader.readAsDataURL(values.file[0]);
   };
@@ -51,9 +54,9 @@ const FormGenerate = () => {
     handleGetJob();
   }, []);
   return (
-    <div className="bg-[#6d1a6a] w-[50%] px-12 h-[100vh] ">
+    <div className="bg-[#6d1a6a] w-[50%] px-12 h-[100vh]">
       <form
-        className="w-full flex flex-col gap-y-10 mt-[50px] mb-10"
+        className="w-full flex flex-col gap-y-10 mt-4 mb-10"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="w-full flex justify-end gap-x-2">
