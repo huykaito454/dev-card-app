@@ -1,60 +1,35 @@
 import React from "react";
 
-const DevCard = ({ height = 400 }) => {
+const DevCard = ({ height = 400, item }) => {
   return (
     <div
       className="dev-card bg-cover bg-no-repeat bg-center rounded-xl py-6 px-3 flex flex-col justify-between overflow-hidden"
       style={{
-        backgroundImage:
-          "url(https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80)",
+        backgroundImage: `url("data:image/png;base64, ${item.image}")`,
         height: `${height}px`,
       }}
     >
       <div className="name text-2xl font-bold text-ellipsis overflow-hidden">
-        @nthuy
+        @{item.authorName}
       </div>
       <div className="card-content">
         <div className="information mb-3">
-          <p className="text-4xl font-bold">21</p>
-          <p>Frontend Developer </p>
+          <p className="text-4xl font-bold">{item.authorAge}</p>
+          <p>{item?.Job?.name}</p>
         </div>
         <div className="skills flex flex-col gap-y-1 mb-3">
-          <div className="skill-item ">
-            <div className="skill-item-name text-xs mb-1">Github</div>
-            <div className="w-[55%] bg-gray-500 h-1 rounded-lg">
-              <div
-                className="bg-white h-1 rounded-lg"
-                style={{ width: "75%" }}
-              ></div>
-            </div>
-          </div>
-          <div className="skill-item ">
-            <div className="skill-item-name text-xs mb-1">Github</div>
-            <div className="w-[55%] bg-gray-500 h-1 rounded-lg">
-              <div
-                className="bg-white h-1 rounded-lg"
-                style={{ width: "75%" }}
-              ></div>
-            </div>
-          </div>
-          <div className="skill-item ">
-            <div className="skill-item-name text-xs mb-1">Github</div>
-            <div className="w-[55%] bg-gray-500 h-1 rounded-lg">
-              <div
-                className="bg-white h-1 rounded-lg"
-                style={{ width: "75%" }}
-              ></div>
-            </div>
-          </div>
-          <div className="skill-item ">
-            <div className="skill-item-name text-xs mb-1">Github</div>
-            <div className="w-[55%] bg-gray-500 h-1 rounded-lg">
-              <div
-                className="bg-white h-1 rounded-lg"
-                style={{ width: "75%" }}
-              ></div>
-            </div>
-          </div>
+          {item?.CardSkills.length > 0 &&
+            item.CardSkills?.map((item) => (
+              <div className="skill-item ">
+                <div className="skill-item-name text-xs mb-1">{item.name}</div>
+                <div className="w-[55%] bg-gray-500 h-1 rounded-lg">
+                  <div
+                    className="bg-white h-1 rounded-lg"
+                    style={{ width: `${item.percentage}%` }}
+                  ></div>
+                </div>
+              </div>
+            ))}
         </div>
         <div className="socials flex items-center">
           <img

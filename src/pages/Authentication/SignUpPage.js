@@ -6,6 +6,7 @@ import Input from "./Input";
 import { API } from "../../config";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import Loading from "../../components/Loading/Loading";
 const schema = yup
   .object({
     email: yup
@@ -16,7 +17,7 @@ const schema = yup
       .string()
       .min(8, "Your password must be at least 8 characters or greater")
       .matches(/^(?=.*[a-z])[A-Za-z\d@$!%*?&]{8,}$/, {
-        message: "Must have at least 1 character",
+        message: "Must have at least 1 uppercase or lowercase",
       })
       .required("Please enter your password"),
   })
@@ -25,26 +26,26 @@ const SignUpPage = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors, isValid, isSubmitting },
+    formState: { errors, isSubmitting },
   } = useForm({ resolver: yupResolver(schema) });
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const handleRegisterForm = async (data) => {
+    setLoading(true);
     try {
-      const res = await axios.post(API.getAPI("register"), data);
-      console.log(res);
-      alert(res.data.message);
+      const res = await axios.post(API.getAPI("sign-up"), data);
+      if (res) setLoading(!loading);
       sessionStorage.setItem("email", data.email);
       navigate("/confirm-otp");
     } catch (error) {
+      setLoading(!loading);
       alert(error.response.data.message);
       console.log(error);
     }
   };
   const onSubmit = (values, e) => {
     e.preventDefault();
-    console.log(values);
     if (values.password === values.confirmPassword) {
-      console.log(values);
       handleRegisterForm(values);
     } else {
       alert("Password must not be the same");
@@ -53,6 +54,7 @@ const SignUpPage = () => {
 
   return (
     <div className="bg-register h-screen bg-cover bg-no-repeat flex items-center justify-center">
+      {loading && <Loading></Loading>}
       <form
         className="form-sign-up w-[600px] flex flex-col items-center justify-center bg-[#2B2B2B] rounded-xl md:px-20 px-10 py-5"
         onSubmit={handleSubmit(onSubmit)}

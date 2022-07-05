@@ -32,7 +32,6 @@ const SignInPage = () => {
     try {
       const res = await axios.post(API.getAPI("login"), data);
       localStorage.setItem("userToken", res?.headers?.authorization);
-      alert(res.data.message);
       navigate("/");
       window.location.reload(false);
     } catch (error) {
@@ -42,7 +41,6 @@ const SignInPage = () => {
   };
   const onSubmit = (values, e) => {
     e.preventDefault();
-    // if (!isValid) return;
     if (!values.password || !values.email) {
       alert("Empty data");
     } else {

@@ -29,11 +29,11 @@
   .button-active {
     @apply active:scale-90 transition-all cursor-pointer select-none;
   }
-  .input-file {
-    display: none;
-  }
 }
-
+#file-input::-webkit-file-upload-button {
+  display: none;
+  user-select: none;
+}
 .swiper-pagination {
   position: relative;
   z-index: 100;
@@ -53,7 +53,6 @@
 .swiper-pagination-bullet-active {
   @apply bg-primary;
 }
-
 .add,
 .your-template {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
@@ -77,6 +76,9 @@
 }
 .list-item3 {
   @apply your-template2 flex items-center justify-center bg-primary py-1 pl-10 pr-4 text-lg font-bold select-none;
+}
+.list-item4 {
+  @apply flex items-center justify-center bg-primary py-1 px-10 my-2 text-lg font-bold select-none;
 }
 /* width */
 ::-webkit-scrollbar {
