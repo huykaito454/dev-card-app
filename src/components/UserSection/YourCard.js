@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getData } from "../../actions/httpHandle";
+import { getData, removeCard } from "../../actions/httpHandle";
 import { Buffer } from "buffer";
 import Loading from "../Loading/Loading";
 import "swiper/scss";
@@ -8,21 +8,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import DevCard from "../DevCard/DevCard";
+import axios from "axios";
+import { API } from "../../config";
 const YourCard = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("userToken");
   const [card, setCard] = useState([]);
-  const [loading, setLoading] = useState(false);
   const handleGetData = async () => {
-    setLoading(true);
     // const data = await getDataNoJWT("get-all-cards");
     const data = await getData("get-cards-user");
     if (data.data.data) {
       const newData = handleBase64(data.data.data);
-      setLoading(false);
+
       setCard(newData);
     } else {
-      setLoading(false);
       return;
     }
   };
@@ -32,8 +31,24 @@ const YourCard = () => {
     }
     return data;
   };
+  const handleDelete = async (id) => {
+    try {
+      const res = await axios.delete(API.getAPI("delete_card"), {
+        params: { id: id },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      });
+      alert(res.data.message);
+      window.location.reload(false);
+    } catch (error) {
+      alert(error.response.data.message);
+    }
+    console.log();
+  };
   useEffect(() => {
-    handleGetData();
+    handleGetData(localStorage.getItem("useToken"));
   }, []);
   if (token !== null) {
     return (
@@ -58,7 +73,6 @@ const YourCard = () => {
         </div>
         <div className="card-list">
           <div className="cursor-pointer dev-list select-none mb-10 w-full">
-            {loading && <Loading></Loading>}
             <Swiper
               grabCursor={"true"}
               spaceBetween={100}
@@ -70,7 +84,15 @@ const YourCard = () => {
             >
               {card.length > 0 ? (
                 card.map((item) => (
-                  <SwiperSlide key={item.id}>
+                  <SwiperSlide key={item.id} className="relative">
+                    <div
+                      className="px-3 py-1 bg-red-500 absolute right-0 rounded-full button-active"
+                      onClick={() => {
+                        handleDelete(item.id);
+                      }}
+                    >
+                      <i className="fas fa-times text-3xl z-"></i>
+                    </div>
                     <DevCard item={item}></DevCard>
                   </SwiperSlide>
                 ))

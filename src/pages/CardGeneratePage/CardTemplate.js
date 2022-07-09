@@ -35,12 +35,15 @@ const CardTemplate = () => {
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
-          {card.length > 0 &&
-            card.map((item) => (
+          {card && card.length > 0 ? (
+            card.slice(0, 5).map((item) => (
               <SwiperSlide key={item.id}>
                 <DevCard height={500} item={item}></DevCard>
               </SwiperSlide>
-            ))}
+            ))
+          ) : (
+            <span>No card</span>
+          )}
         </Swiper>
       </div>
     </div>

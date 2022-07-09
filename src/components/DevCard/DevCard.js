@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const DevCard = ({ height = 400, item }) => {
   return (
@@ -8,6 +8,7 @@ const DevCard = ({ height = 400, item }) => {
         backgroundImage: `url("data:image/png;base64, ${item.image}")`,
         height: `${height}px`,
       }}
+      id="card"
     >
       <div className="name text-2xl font-bold text-ellipsis overflow-hidden">
         @{item.authorName}

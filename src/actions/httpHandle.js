@@ -1,5 +1,6 @@
 import axios from "axios";
 import { API, config } from "../config";
+import { toast } from "react-toastify";
 export const getData = async (type) => {
   try {
     const res = await axios.get(API.getAPI(type), config);
@@ -39,5 +40,24 @@ export const handleResendOTP = async (type, data) => {
     return res;
   } catch (error) {
     console.log(error);
+  }
+};
+export const removeCard = async (type, id) => {
+  try {
+    const res = await axios.delete(API.getAPI(type), {
+      params: { id: id },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("useToken"),
+      },
+    });
+    toast.success(res.data.message, {
+      pauseOnHover: false,
+      delay: 0,
+      position: toast.POSITION.TOP_RIGHT,
+    });
+    window.location.reload(false);
+  } catch (error) {
+    alert(error.response.data.message);
   }
 };

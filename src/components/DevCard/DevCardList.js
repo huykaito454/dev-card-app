@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import DevCard from "./DevCard";
-import { getData, getDataNoJWT } from "../../actions/httpHandle";
+import { getDataNoJWT } from "../../actions/httpHandle";
 import { Buffer } from "buffer";
 import Loading from "../Loading/Loading";
 const DevCardList = () => {
